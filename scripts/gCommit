@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+#   purpose: Automate the commit push process	
+#    author: Robert C. Burkhall
+#      date: June 6, 2015
+#
+#license(s): http://www.gnu.org/licenses/agpl.txt
+#
+if [ "$1" != "" ]; then
+	gstat=ds=$(git status | grep -E 'modified:|new file:' | cut -d ":" -f1)	
+	if [ "$gstat" == "" ]; then
+		echo "Nothing has been modifed, exiting."
+		exit 0;
+	fi	
+
+	git ls-tree --full-tree -r HEAD
+	
+	git commit -a -m "$1" && git push
+	
+	git status
+else
+	echo 'Enter commit string for -m option.'
+fi 
