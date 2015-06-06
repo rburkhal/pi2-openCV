@@ -19,11 +19,14 @@ credit(s):
 Set Project Name, use Quotes if there are spaces.
 
 Set Project Variable to the name you will use.
+
 	project="%%Your Projects Name %%"
 
 #Step 1:
-Ensure the script has execute permissions, if not;
+Ensure the script has execute permissions, if not
+
 	chmod +x pi2-openCV
 
 #Step 2: Execute script.
+
 	./pi2-openCV 
