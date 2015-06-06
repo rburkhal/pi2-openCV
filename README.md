@@ -1,12 +1,12 @@
 #   project: pi2-openCV	
 	
-   purpose: Automates the OpenCV & Python Setup for Raspberry Pi	
-    author: Robert C. Burkhall
-      date: June 6, 2015
+purpose: Automates the OpenCV & Python Setup for Raspberry Pi	
+author:  Robert C. Burkhall
+date:    June 6, 2015
 
 license(s): http://www.gnu.org/licenses/agpl.txt
 
- credit(s): 
+credit(s): 
            Adrian Rosebrock on February 23, 2015 in Raspberry Pi
            http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/
 
@@ -14,15 +14,17 @@ license(s): http://www.gnu.org/licenses/agpl.txt
 	    The Weather Company
 ##
 
-#Step 0: Set Project Name, use Quotes if there are spaces
+#Step 0: 
+Set Project Name, use Quotes if there are spaces.
 
-   Set Project Variable
-project=%%Your Projects Name %%
+Set Project Variable to the name you will use.
+	project="%%Your Projects Name %%"
 
-#Step 1: Ensure the script has execute permissions, if not
+#Step 1:
+Ensure the script has execute permissions, if not;
 	chmod +x pi2-openCV
 
-#Step 2: Execute script
+#Step 2: Execute script.
           ./pi2-openCV 
 
 
