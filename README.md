@@ -8,7 +8,8 @@ date:    June 6, 2015
 
 license(s): http://www.gnu.org/licenses/agpl.txt
 
-credit(s): 
+credit(s):
+
            Adrian Rosebrock on February 23, 2015 in Raspberry Pi
            http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/
 
@@ -30,3 +31,8 @@ Ensure the script has execute permissions, if not
 #Step 2: Execute script.
 
 	./pi2-openCV 
+
+####
+##
+#
+New features to come soon...
