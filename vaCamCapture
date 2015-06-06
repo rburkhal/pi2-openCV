@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+if [ "$1" == "" ]; then
+	echo "Capture video or stills"
+	echo "     -v : Video Capture"
+	echo "     -s : Still Capture"
+elif [ "$1" == "-s" ]; then
+	# Capture an image from the camera
+	raspistill -vf -hf  -o cam-$(date +"%Y-%m-%d_%H%M").jpg
+elif [ "$1" == "-v" ]; then 
+	# Capture video	
+	raspivid -t 5000 -o video.h264 -b 3500000
+fi
