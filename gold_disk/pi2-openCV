@@ -1,4 +1,4 @@
-#  descript: Automates the OpenCV & Python Setup for Raspberry Pi	
+#   purpose: Automates the OpenCV & Python Setup for Raspberry Pi	
 #    author: Robert C. Burkhall
 #      date: June 6, 2015
 #
@@ -10,6 +10,10 @@
 #
 #	    Mara Pheng - For his Inspiration
 #	    The Weather Company
+####
+#   Set Project Variable
+project=vaSmoke
+
 #
 # Trap ctrl-c
 trap ctrl_c INT
@@ -95,7 +99,7 @@ function step8() {
 
 function step9() {
 	echo '### Step 9: Download OpenCV and unpack it'
-	openCV=~/vaSmoke/gold_disk/opencv-2.4.10
+	openCV=~/$project/gold_disk/opencv-2.4.10
 	openCVzip="opencv-2.4.10.zip"
  	build="build"
 	if [ ! -d "$openCV" ]; then
@@ -145,11 +149,14 @@ import cv2
 cv2.__version__
 '
 	python versionChk.py
+	rm -f versionChk.py
 }
-
+#			Script Starts Here
 #
 # The step process was developed to assist in fixing issues that are found.
 #### Comment out steps that have succeeded
+#
+#
 echo `date`
 #step1
 #step2
@@ -159,11 +166,11 @@ echo `date`
 #step6
 #step7
 #step8
-step9	# If OpenCV has be compiled and you to update all aspects
-step10  # Leaving out these lines will ensure you don't screw up OpenCV in some way
+step9	# If OpenCV has been compiled and you wamt to update all aspects of the environment,
+step10  # then leaving out these lines will ensure you don't screw up OpenCV in some way
 step11
 
+###  Show Ending Time
 echo '### Step 12: Gold Disk Creation complete @ '`date`
-### echo ### Step 13: Show Ending Time
 
 exit 1
