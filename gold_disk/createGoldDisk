@@ -139,11 +139,11 @@ function step11() {
 	echo '### Step 11: Give our OpenCV and Python installation a test drive'
 	workon cv
 	cat > versionChk.py <<<'
-	#!/usr/bin/env python
-	# -*- coding: utf-8 -*-
-	import cv2
-	cv2.__version__
-	'
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import cv2
+cv2.__version__
+'
 	python versionChk.py
 }
 
