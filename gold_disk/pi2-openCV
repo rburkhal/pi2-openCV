@@ -69,6 +69,7 @@ function step6() {
 
 function step7() {
 	echo '### Step 7: Install  virtualenv  and virtualenvwrapper'
+	echo '####### Set a password with sudo passwd, error will go away.'
 	sudo pip install virtualenv virtualenvwrapper
 	 # update ~/.profile
 	 re=`grep -q "source /usr/local/bin/virtualenvwrapper.sh" ~/.profile`
@@ -133,8 +134,9 @@ function step9() {
 
 function step10() {
 	echo '### Step 10: In order to utilize OpenCV within our cv virtual environment, '
-	echo '# we first need to sym-link OpenCV into our site-packages  directory'
+	echo '# we first need to sym-link OpenCV into our site-packages  directory'	
 	cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+	rm -f cv2.so cv.py 
 	ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
 	ln -s /usr/local/lib/python2.7/site-packages/cv.py cv.py
 }
@@ -151,7 +153,10 @@ function step11() {
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import cv2
+import logging
 cv2.__version__
+logging.info(cv2.__version__)
+print " OpenCV Found: " + cv2.__version__
 '
 	python versionChk.py
 	rm -f versionChk.py
@@ -163,14 +168,14 @@ cv2.__version__
 #
 #
 echo `date`
-step1
-step2
-step3
-step4
-step5
-step6
-step7
-step8
+#step1
+#step2
+#step3
+#step4
+#step5
+#step6
+#step7
+#step8
 #step9	# If OpenCV has been compiled and you wamt to update all aspects of the environment,
 step10  # then leaving out these lines will ensure you don't screw up OpenCV in some way
 step11
