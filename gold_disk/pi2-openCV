@@ -141,7 +141,12 @@ function step10() {
 
 function step11() {
 	echo '### Step 11: Give our OpenCV and Python installation a test drive'
-	workon cv
+	source `which virtualenvwrapper.sh`
+	rslt=$( $(workon cv) | grep ERROR: | cut -d ":" -f1)
+	if [ "$rslt" == "ERROR" ]; then
+		source ~/.profile
+		workon cv
+	fi
 	cat > versionChk.py <<<'
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -158,15 +163,15 @@ cv2.__version__
 #
 #
 echo `date`
-#step1
-#step2
-#step3
-#step4
-#step5
-#step6
-#step7
-#step8
-step9	# If OpenCV has been compiled and you wamt to update all aspects of the environment,
+step1
+step2
+step3
+step4
+step5
+step6
+step7
+step8
+#step9	# If OpenCV has been compiled and you wamt to update all aspects of the environment,
 step10  # then leaving out these lines will ensure you don't screw up OpenCV in some way
 step11
 
